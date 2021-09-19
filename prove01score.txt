@@ -1,0 +1,35 @@
+After completing the assignment, be sure to push to Github. You do not have to worry about pushing to Heroku this lesson.
+Please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+    https://github.com/mathieusteele/cse341-project
+
+3. Briefly list and describe the elements of the application that are functioning. 
+
+    The base route "/" works and has the form as expected. I also added a hyperlink to the users route. After a form submission is received, the users route will include it in the list of users whose names are displayed.   
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+    N/A
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+    I learned the array.push in one route can affect the the array on the server in a way that it can be read from in the other route.
+
+6. If you could change this assignment to be more effective or helpful, what would you change?
+
+    I learned a lot this week and I felt that the assignment was just about right.
+
+7. Please select the category you feel best describes your assignment:
+   1 - Some attempt was made
+   2 - Developing, but significantly deficient
+   3 - Slightly deficient, but still mostly adequate
+   4 - Meets requirements
+   5 - Shows creativity and excels above and beyond requirements
+
+   I feel I at least met the requirements and tried to excel to achieve a 5.
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+    I experimented with using an array to hold the usernames and map over them before I saw that this was the expected pattern from the ta01 file. I was trying to think of how the data might be coming from a data store of some kind and how that store would need to be updated with the form submissions.
