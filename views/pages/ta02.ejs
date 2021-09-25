@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <% include ../includes/header.ejs %>
+  </head>
 
-<head>
-  <% include ../includes/header.ejs %>
-</head>
-
-<body>
-  <% include ../includes/nav.ejs %>
+  <body>
+    <% include ../includes/nav.ejs %>
     <div class="jumbotron text-center">
       <div class="container">
-        <h1>
-          <%= title %>
-        </h1>
-        <p>This is the placeholder for Team Activity 02</p>
+        <h1><%= title %></h1>
+
+        <% if (errors.length > 0) { %> Errors (<%= errors.length %>):
+
+        <ul>
+          <% for (let error of errors) { %>
+          <li>
+            <%= error %>
+
+            <form method="POST" action="/ta02/clearError">
+              <input
+                id="user"
+                type="hidden"
+                name="error"
+                value="<%= error %>"
+              />
+              <button type="submit">OK</button>
+            </form>
+          </li>
+          <% } %>
+        </ul>
+
+        <% } %> <% if (users.length > 0) { %> Users (<%= users.length %>):
+
+        <ul>
+          <% for (let user of users) { %>
+          <li><%= user %></li>
+          <% } %>
+        </ul>
+
+        <% } %> Add a user:<br />
+        <form method="POST" action="/ta02/addUser">
+          <label for="user"
+            >User<input id="user" type="text" name="user"
+          /></label>
+          <button type="submit">Add</button>
+        </form>
+
+        Delete a user:<br />
+        <form method="POST" action="/ta02/removeUser">
+          <label for="user"
+            >User<input id="user" type="text" name="user"
+          /></label>
+          <button type="submit">Delete</button>
+        </form>
       </div>
     </div>
-    <div class="container">
-
-    </div>
-
-
-</body>
-
+    <div class="container"></div>
+  </body>
 </html>
