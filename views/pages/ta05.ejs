@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../includes/header.ejs %>
+  </head>
+
+  <body>
+    <% include ../includes/nav.ejs %>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1><%= title %></h1>
+        <p>This is the placeholder for Team Activity 05</p>
+      </div>
+    </div>
+    <div class="container">
+      The counter value is <%= counter %>
+      <form method="POST" action="/ta05/counter">
+        <input type="hidden" name="counterAction" value="increase" />
+        <button type="submit">+</button>
+      </form>
+      <form method="POST" action="/ta05/counter">
+        <input type="hidden" name="counterAction" value="decrease" />
+        <button type="submit">-</button>
+      </form>
+      <br /><br />The style value is <%= style %>
+
+      <form method="POST" action="/ta05/change-style">
+        <button type="submit">Change it up!</button>
+      </form>
+      <br /><br />
+      <form method="POST" action="/ta05/reset">
+        <button type="submit">Reset</button>
+      </form>
+    </div>
+  </body>
+</html>
